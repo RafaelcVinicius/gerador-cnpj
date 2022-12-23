@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  app:
+    container_name: app-gerador
+    build:
+      context: ./
+    ports:
+      - 8080:8080
+    networks:
+      - network
+    volumes:
+      - /etc/ssl/certs:/etc/ssl/certs
+      - /etc/ssl/private:/etc/ssl/private
+
+networks:
+  network:
+    driver: bridge
